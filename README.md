@@ -15,7 +15,7 @@ In order to connect to a server, create a new instance of a client:
 ```typescript
 import {Client} from 'fm-data-api-client';
 
-const client = new Client('https://file-maker-server', 'username', 'password', 'database');
+const client = new Client('https://file-maker-server', 'database', 'username', 'password');
 ```
 
 ## Sign out
@@ -145,12 +145,10 @@ All properties and the first parameter itself are optional.
 
 ### Searching for records
 
-If you need to search for specific records, you can do so via the find method:
+If you need to search for specific records, you can do so via the find method with and array:
 
 ```typescript
-const records = await layout.find({
-    query: {name: 'foobar'},
-});
+const records = await layout.find( [{name: 'foobar'}] );
 ```
 
 ### Additional parameters
